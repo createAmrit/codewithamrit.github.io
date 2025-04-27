@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Main Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background: #1e1e2f;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #ffcc70;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            color: #ff758c;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            background: url('background.png') center/cover no-repeat;
+            padding: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent grey background */
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            display: inline-block; /* Ensures the box wraps tightly around the text */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .section-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px;
+            text-align: center;
+            transition: filter 0.5s ease-in-out;
+        }
+        .section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        .section:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.2);
+        }
+        .section.active {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.1);
+            width: 90vw;
+            height: 90vh;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.3);
+        }
+        .section-content {
+            display: none;
+            margin-top: 15px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #1e1e2f;
+            margin-top: 20px;
+        }
+        .character {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 150px;
+            animation: float 3s infinite ease-in-out;
+            border-radius: 50%;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .hero-content {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent grey background */
+            padding: 20px 30px;
+            border-radius: 10px;
+            text-align: center;
+            display: inline-block; /* Ensures the box wraps tightly around the content */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for better visibility */
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0; /* Remove default margin */
+            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #ffffff;
+            margin-top: 10px; /* Add spacing between heading and paragraph */
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <a href="thriller.html">Thriller</a>
+            <a href="fanfiction.html">Fanfiction</a>
+            <a href="novels.html">Novels</a>
+            <a href="love.html">Love</a>
+            <a href="psychology.html">Psychology</a>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome, Sweetheart ❤️</h1>
+            <p>A world filled with everything you love, specially crafted for you.</p>
+        </div>
+    </section>
+    <div class="section-container">
+        <a href="thriller.html" class="section">
+            <h2>Thriller Realm 🔥</h2>
+            <p>Dive into suspenseful and thrilling stories!</p>
+        </a>
+        <a href="fanfiction.html" class="section">
+            <h2>Fanfiction Universe ✨</h2>
+            <p>Explore and enjoy customized fanfiction adventures.</p>
+        </a>
+        <a href="novels.html" class="section">
+            <h2>Novel Haven 📚</h2>
+            <p>Discover and fall in love with the best novels.</p>
+        </a>
+        <a href="love.html" class="section">
+            <h2>Love & Care Corner ❤️</h2>
+            <p>Because love and care make life special.</p>
+        </a>
+        <a href="psychology.html" class="section">
+            <h2>Psychology Insights 🧠</h2>
+            <p>Explore the depths of the human mind.</p>
+        </a>
+    </div>
+    <div class="footer">
+        <p>Made with ❤️ just for you</p>
+    </div>
+</body>
+</html>
